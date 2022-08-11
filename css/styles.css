@@ -4,6 +4,98 @@
   padding: 0;
 }
 
+:root {
+  --game-color: rgb(32, 35, 82);
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --win-color: #28a745;
+  --lose-color: #dc3545;
+}
+
 body {
-  color: red;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  margin: 3.5rem auto;
+
+  background: var(--game-color);
+}
+
+.container > p {
+  padding-top: 1.5rem;
+
+  text-align: center;
+  font-size: 3rem;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.player-scoreboard,
+.computer-scoreboard {
+  margin: 2rem;
+  padding: 0.5rem;
+
+  text-align: center;
+  border: 1px solid var(--light-color);
+  font-size: 1.5rem;
+}
+
+.player-score,
+.computer-score {
+  padding: 0.5rem;
+
+  font-size: 2rem;
+}
+
+.play-options {
+  display: flex;
+  justify-content: center;
+}
+
+.play-button {
+  padding: 0.75rem 2.5rem;
+
+  background: rgb(45, 117, 96);
+  border-radius: 10px;
+  font-size: 2rem;
+}
+
+.player-choice {
+  display: none;
+}
+
+.choices {
+  display: none;
+}
+
+.hands {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-hand {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 760px) {
+  .container > p {
+    font-size: 2.25rem;
+  }
+
+  .player-scoreboard,
+  .computer-scoreboard {
+    font-size: 1.25rem;
+  }
+
+  .player-score,
+  .computer-score {
+    font-size: 1.75rem;
+  }
 }
