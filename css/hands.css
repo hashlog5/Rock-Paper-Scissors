@@ -1,11 +1,7 @@
-/* controller */
+/* hands */
 .hands {
   display: flex;
   justify-content: space-around;
-}
-
-.choices {
-  display: none;
 }
 
 .player-hand {

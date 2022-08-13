@@ -1,4 +1,4 @@
-/* play options */
+/* play-options */
 .play-options {
   display: flex;
   justify-content: center;
@@ -19,7 +19,11 @@
 .play-prompt {
   display: none;
 }
+.choices {
+  display: none;
+}
 
+/* font-sizes */
 @media (max-width: 760px) {
   .play-button,
   .play-prompt {
