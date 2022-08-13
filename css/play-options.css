@@ -6,44 +6,56 @@
   justify-content: center;
 }
 
-.play-button,
-.play-prompt {
+/* play-button */
+.play-button {
   padding: 0.5rem 2.5rem;
 
   background: rgb(45, 117, 96);
   border-radius: 10px;
   font-size: 2rem;
-}
 
-.play-button {
   display: none;
 }
-.play-prompt {
-  /* display: none; */
-  background: none;
+
+.play-button:hover {
+  color: var(--choice-color);
 }
+
+/* play-prompt */
+.play-prompt {
+  padding: 0.5rem 2.5rem;
+
+  color: var(--choice-color);
+  font-size: 2rem;
+
+  /* display: none; */
+}
+
+/* choices */
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
   gap: 7rem;
 
-  /* text-align: center; */
+  /* display: none; */
 }
 
-.rock,
-.paper,
-.scissors {
+#rock,
+#paper,
+#scissors {
   background: var(--dark-color);
   color: rgb(45, 117, 96);
   border-radius: 50%;
   font-size: 3.5rem;
+
+  padding: 0.5rem;
 }
 
-.rock:hover,
-.paper:hover,
-.scissors:hover {
-  color: var(--hand-color);
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+  color: var(--choice-color);
 }
 
 /* font-sizes */

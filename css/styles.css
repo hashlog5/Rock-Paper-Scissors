@@ -8,7 +8,7 @@
   --game-color: rgb(32, 35, 82);
   --dark-color: #101010;
   --light-color: #f4f4f4;
-  --hand-color: rgb(255, 165, 0);
+  --choice-color: rgb(255, 165, 0);
   --win-color: #28a745;
   --lose-color: #dc3545;
 }
