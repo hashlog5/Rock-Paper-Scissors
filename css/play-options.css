@@ -4,14 +4,27 @@
   justify-content: center;
 }
 
-.play-button {
-  padding: 0.75rem 2.5rem;
+.play-button,
+.play-prompt {
+  padding: 0.5rem 2.5rem;
 
   background: rgb(45, 117, 96);
   border-radius: 10px;
   font-size: 2rem;
 }
 
+.play-button {
+  /* display: none; */
+}
 .play-prompt {
   display: none;
+}
+
+@media (max-width: 760px) {
+  .play-button,
+  .play-prompt {
+    padding: 0.75rem 2.5rem;
+
+    font-size: 1.75rem;
+  }
 }

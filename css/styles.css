@@ -55,6 +55,7 @@ body {
   .container {
     width: 90%;
   }
+
   .container > h1 {
     font-size: 2.55rem;
   }
