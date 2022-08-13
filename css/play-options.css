@@ -6,50 +6,53 @@
   justify-content: center;
 }
 
-/* play-button */
-.play-button {
-  padding: 0.5rem 2.5rem;
-
-  background: rgb(45, 117, 96);
-  border-radius: 10px;
-  font-size: 2rem;
-
-  display: none;
-}
-
-.play-button:hover {
-  color: var(--choice-color);
-}
-
-/* play-prompt */
+.play-invite,
 .play-prompt {
   padding: 0.5rem 2.5rem;
 
   color: var(--choice-color);
   font-size: 2rem;
+}
+
+.play-invite {
+  /* display: none; */
+}
+
+#play-button {
+  padding: 0.5rem;
+
+  border-radius: 50%;
+  color: rgb(45, 117, 96);
+  font-size: 4rem;
 
   /* display: none; */
 }
 
+#play-button:hover {
+  color: var(--choice-color);
+}
+
 /* choices */
+.play-prompt {
+  display: none;
+}
+
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-content: center;
   gap: 7rem;
 
-  /* display: none; */
+  display: none;
 }
 
 #rock,
 #paper,
 #scissors {
-  background: var(--dark-color);
+  padding: 0.5rem;
+
   color: rgb(45, 117, 96);
   border-radius: 50%;
   font-size: 3.5rem;
-
-  padding: 0.5rem;
 }
 
 #rock:hover,
