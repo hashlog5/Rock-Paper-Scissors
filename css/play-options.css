@@ -19,13 +19,13 @@
   /* display: none; */
 }
 #play-button {
-  margin-top: 1rem;
+  margin: 1rem 0;
   padding: 0.9rem 1rem 0.8rem 1.45rem;
 
   background: var(--dark-color);
-  border-radius: 50%;
-  color: var(--option-color);
+  color: var(--button-color);
   font-size: 2.75rem;
+  border-radius: 50%;
 
   /* display: none; */
 }
@@ -49,14 +49,13 @@
 #rock,
 #paper,
 #scissors {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 1rem;
 
   background: var(--dark-color);
-  color: var(--option-color);
-  border-radius: 50%;
+  color: var(--button-color);
   font-size: 2.55rem;
+  border-radius: 50%;
 }
 
 #rock:hover,
@@ -67,8 +66,7 @@
 
 /* font-sizes */
 @media (max-width: 760px) {
-  .play-button,
-  .player-prompt {
+  .prompt {
     padding: 0.75rem 2.5rem;
 
     font-size: 1.75rem;
