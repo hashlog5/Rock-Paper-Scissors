@@ -1,0 +1,17 @@
+/* play options */
+.play-options {
+  display: flex;
+  justify-content: center;
+}
+
+.play-button {
+  padding: 0.75rem 2.5rem;
+
+  background: rgb(45, 117, 96);
+  border-radius: 10px;
+  font-size: 2rem;
+}
+
+.play-prompt {
+  display: none;
+}

@@ -1,0 +1,13 @@
+/* controller */
+.hands {
+  display: flex;
+  justify-content: space-around;
+}
+
+.choices {
+  display: none;
+}
+
+.player-hand {
+  transform: rotateY(180deg);
+}
