@@ -1,6 +1,8 @@
 /* play-options */
 .play-options {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -14,13 +16,34 @@
 }
 
 .play-button {
-  /* display: none; */
+  display: none;
 }
 .play-prompt {
-  display: none;
+  /* display: none; */
+  background: none;
 }
 .choices {
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  gap: 7rem;
+
+  /* text-align: center; */
+}
+
+.rock,
+.paper,
+.scissors {
+  background: var(--dark-color);
+  color: rgb(45, 117, 96);
+  border-radius: 50%;
+  font-size: 3.5rem;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  color: var(--hand-color);
 }
 
 /* font-sizes */
