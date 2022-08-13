@@ -6,16 +6,15 @@
 
 .player-scoreboard,
 .computer-scoreboard {
-  margin-bottom: 2rem;
-  padding: 0.5rem;
+  margin: 1.25rem 0;
 
   text-align: center;
-  font-size: 1.55rem;
+  font-size: 1.75rem;
 }
 
 .player-score,
 .computer-score {
-  padding: 0.5rem;
+  padding: 0.55rem;
 
   font-size: 2.75rem;
 }
