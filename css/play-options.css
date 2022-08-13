@@ -7,23 +7,25 @@
 }
 
 .play-invite,
-.play-prompt {
+.prompt {
   padding: 0.5rem 2.5rem;
 
   color: var(--choice-color);
   font-size: 2rem;
 }
 
+/* play-invite */
 .play-invite {
   /* display: none; */
 }
-
 #play-button {
-  padding: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem 0.8rem 1.45rem;
 
+  background: var(--dark-color);
   border-radius: 50%;
-  color: rgb(45, 117, 96);
-  font-size: 4rem;
+  color: var(--option-color);
+  font-size: 2.75rem;
 
   /* display: none; */
 }
@@ -33,10 +35,9 @@
 }
 
 /* choices */
-.play-prompt {
+.prompt {
   display: none;
 }
-
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -48,11 +49,14 @@
 #rock,
 #paper,
 #scissors {
-  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
 
-  color: rgb(45, 117, 96);
+  background: var(--dark-color);
+  color: var(--option-color);
   border-radius: 50%;
-  font-size: 3.5rem;
+  font-size: 2.55rem;
 }
 
 #rock:hover,
@@ -64,9 +68,15 @@
 /* font-sizes */
 @media (max-width: 760px) {
   .play-button,
-  .play-prompt {
+  .player-prompt {
     padding: 0.75rem 2.5rem;
 
     font-size: 1.75rem;
+  }
+
+  #rock,
+  #paper,
+  #scissors {
+    font-size: 2.25rem;
   }
 }

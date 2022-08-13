@@ -8,7 +8,10 @@
   --game-color: rgb(32, 35, 82);
   --dark-color: #101010;
   --light-color: #f4f4f4;
+
+  --option-color: rgb(45, 117, 96);
   --choice-color: rgb(255, 165, 0);
+  
   --win-color: #28a745;
   --lose-color: #dc3545;
 }
@@ -21,7 +24,7 @@ body {
 .container {
   width: 50%;
   height: 80%;
-  margin: 4rem auto;
+  margin: 2.25rem auto;
 
   background: var(--game-color);
 }
