@@ -1,10 +1,18 @@
-/* play-options */
-.play-options {
+/** play-options */
+.start-menu,
+.options-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+.start-menu {
+  display: none;
+}
+/* .options-menu {
+  display: none;
+} */
 
 .play-invite,
 .prompt {
@@ -12,10 +20,7 @@
   font-size: 2rem;
 }
 
-/* play-invite */
-.play-invite {
-  /* display: none; */
-}
+/** play-invite */
 #play-button {
   margin: 1rem 0;
   padding: 0.9rem 1rem 0.8rem 1.45rem;
@@ -25,24 +30,17 @@
   font-size: 2.75rem;
   border-radius: 50%;
   cursor: pointer;
-
-  /* display: none; */
 }
 
 #play-button:hover {
   color: var(--choice-color);
 }
 
-/* choices */
-.prompt {
-  display: none;
-}
+/** choices */
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.75rem;
-
-  display: none;
 }
 
 #rock,
@@ -64,7 +62,7 @@
   color: var(--choice-color);
 }
 
-/* font-sizes */
+/** font-sizes */
 @media (max-width: 760px) {
   .play-invite,
   .prompt {

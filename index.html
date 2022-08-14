@@ -27,20 +27,24 @@
     <main class="container">
       <h1>Rock Paper Scissors</h1>
 
-      <!-- play-options -->
+      <!--? play-options -->
       <section class="play-options">
-        <p class="play-invite">Let's Play!</p>
-        <i id="play-button" class="fa-solid fa-play"></i>
+        <div class="start-menu">
+          <p class="play-invite">Let's Play!</p>
+          <i id="play-button" class="fa-solid fa-play"></i>
+        </div>
 
-        <p class="prompt">Make A Choice...</p>
-        <div class="choices">
-          <i id="rock" class="fas fa-hand-rock fa-10x"></i>
-          <i id="paper" class="fas fa-hand-paper fa-10x"></i>
-          <i id="scissors" class="fas fa-hand-scissors fa-10x"></i>
+        <div class="options-menu">
+          <p class="prompt">Make A Choice...</p>
+          <div class="choices">
+            <i id="rock" class="fas fa-hand-rock fa-10x"></i>
+            <i id="paper" class="fas fa-hand-paper fa-10x"></i>
+            <i id="scissors" class="fas fa-hand-scissors fa-10x"></i>
+          </div>
         </div>
       </section>
 
-      <!-- hands -->
+      <!--? hands -->
       <section class="hands">
         <img class="player-hand" src="assets/rock.png" alt="player's hand" />
         <img
@@ -50,7 +54,7 @@
         />
       </section>
 
-      <!-- scoreboard -->
+      <!--? scoreboard -->
       <section class="scoreboard">
         <div class="player-scoreboard">
           <p class="player">Player</p>

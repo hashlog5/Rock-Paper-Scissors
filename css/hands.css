@@ -1,4 +1,4 @@
-/* hands */
+/** hands */
 .hands {
   display: flex;
   justify-content: space-around;
@@ -8,7 +8,7 @@
   transform: rotateY(180deg);
 }
 
-/* hands widths */
+/** hands widths */
 @media (max-width: 760px) {
   .hands > img {
     width: 60%;
