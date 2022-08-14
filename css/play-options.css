@@ -7,12 +7,12 @@
   justify-content: center;
 }
 
-.start-menu {
-  display: none;
-}
-/* .options-menu {
+/* .start-menu {
   display: none;
 } */
+.options-menu {
+  display: none;
+}
 
 .play-invite,
 .prompt {
