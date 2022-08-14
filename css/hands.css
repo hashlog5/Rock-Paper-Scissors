@@ -7,3 +7,10 @@
 .player-hand {
   transform: rotateY(180deg);
 }
+
+/* hands widths */
+@media (max-width: 760px) {
+  .hands > img {
+    width: 60%;
+  }
+}

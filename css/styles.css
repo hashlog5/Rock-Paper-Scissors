@@ -17,14 +17,16 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+
   background: var(--dark-color);
   color: var(--light-color);
 }
 
 .container {
   width: 50%;
-  height: 80%;
-  margin: 1.5rem auto;
+  margin: 2rem 0;
 
   background: var(--game-color);
 }
@@ -62,5 +64,15 @@ body {
 
   .container > h1 {
     font-size: 2.55rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: 95%;
+  }
+
+  .container > h1 {
+    font-size: 2rem;
   }
 }
