@@ -15,6 +15,12 @@ export const game = {
     return this.computerScoreCounter;
   },
 
+  reset() {
+    this.gameStarted = false;
+    this.playerScoreCounter = 0;
+    this.computerScoreCounter = 0;
+  },
+
   playerEarnPoints() {
     this.playerScoreCounter++;
   },

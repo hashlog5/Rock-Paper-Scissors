@@ -24,6 +24,7 @@
   color: var(--button-color);
   font-size: 2.75rem;
   border-radius: 50%;
+  cursor: pointer;
 
   /* display: none; */
 }
@@ -54,6 +55,7 @@
   color: var(--button-color);
   font-size: 2.55rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 #rock:hover,
