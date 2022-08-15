@@ -1,5 +1,5 @@
-import {} from './logic.js';
 import { game } from './game.js';
+import {} from './logic.js';
 
 const startMenu = document.querySelector('.start-menu');
 const playButton = document.querySelector('#play-button');
@@ -11,11 +11,14 @@ const scoreboard = document.querySelector('.scoreboard');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
+// addEventListeners
 playButton.addEventListener('click', startGame);
+
 choices.forEach((choice) =>
   choice.addEventListener('click', () => playerChoice(choice.id))
 );
 
+// logic
 loadGame();
 
 // utilities
