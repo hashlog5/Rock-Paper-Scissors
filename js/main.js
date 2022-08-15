@@ -4,7 +4,7 @@ import { game } from './game.js';
 const startMenu = document.querySelector('.start-menu');
 const playButton = document.querySelector('#play-button');
 
-const optionsMenu = document.querySelector('.options-menu');
+const choicesMenu = document.querySelector('.choices-menu');
 const choices = document.querySelectorAll('.choices i');
 
 const playerHand = document.querySelector('.player-hand');
@@ -26,13 +26,13 @@ loadGame();
 
 //! utilities
 function loadGame() {
-  optionsMenu.style.display = 'none';
+  choicesMenu.style.display = 'none';
   scoreboard.style.display = 'none';
 }
 
 function startGame() {
   startMenu.style.display = 'none';
-  optionsMenu.style.display = 'flex';
+  choicesMenu.style.display = 'flex';
   scoreboard.style.display = 'grid';
 }
 

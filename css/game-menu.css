@@ -1,6 +1,6 @@
 /** game-menu */
 .start-menu,
-.options-menu {
+.choices-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@
   color: var(--choice-color);
 }
 
-/** options-menu */
+/** choices-menu */
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
