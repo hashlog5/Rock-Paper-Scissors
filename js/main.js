@@ -1,5 +1,4 @@
 import { game } from './game.js';
-import {} from './logic.js';
 
 const startMenu = document.querySelector('.start-menu');
 const playButton = document.querySelector('#play-button');
