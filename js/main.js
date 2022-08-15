@@ -1,25 +1,30 @@
 import { game } from './game.js';
 
+//! UI
 const startMenu = document.querySelector('.start-menu');
 const playButton = document.querySelector('#play-button');
+
 const optionsMenu = document.querySelector('.options-menu');
 const choices = document.querySelectorAll('.choices i');
+
 const playerHand = document.querySelector('.player-hand');
 const computerHand = document.querySelector('.computer-hand');
+
 const scoreboard = document.querySelector('.scoreboard');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
-// addEventListeners
+//! events
 playButton.addEventListener('click', startGame);
 
 choices.forEach((choice) =>
-  choice.addEventListener('click', () => playerChoice(choice.id))
+  choice.addEventListener('click', () => playerChose(choice.id))
 );
 
+//! app
 loadGame();
 
-// utilities
+//! utilities
 function loadGame() {
   optionsMenu.style.display = 'none';
   scoreboard.style.display = 'none';
@@ -31,13 +36,20 @@ function startGame() {
   scoreboard.style.display = 'grid';
 }
 
-// logic
-function playerChoice(id) {
-  const playerChose = id;
-  console.log(playerChose);
+//! logic
+function playerChose(playerChoice) {
+  const computerChoice = computerChose();
+
+  compareChoices(playerChoice, computerChoice);
 }
 
 function computerChose() {
   const choices = ['rock', 'paper', 'scissors'];
-  return Math.floor(Math.random() * 3);
+  const randomChoice = Math.floor(Math.random() * 3);
+
+  return choices[randomChoice];
+}
+
+function compareChoices(playerChoice, computerChoice) {
+  console.log(`player: ${playerChoice}, computer: ${computerChoice}`);
 }
