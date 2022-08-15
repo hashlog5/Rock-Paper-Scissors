@@ -7,12 +7,12 @@
   justify-content: center;
 }
 
-/* .start-menu {
-  display: none;
-} */
-.options-menu {
+.start-menu {
   display: none;
 }
+/* .options-menu {
+  display: none;
+} */
 
 .play-invite,
 .prompt {
@@ -20,7 +20,7 @@
   font-size: 2rem;
 }
 
-/** play-invite */
+/** start-menu */
 #play-button {
   margin: 1rem 0;
   padding: 0.9rem 1rem 0.8rem 1.45rem;
@@ -36,7 +36,7 @@
   color: var(--choice-color);
 }
 
-/** choices */
+/** options-menu */
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
