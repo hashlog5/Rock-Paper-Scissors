@@ -52,4 +52,6 @@ function computerChose() {
 
 function compareChoices(playerChoice, computerChoice) {
   console.log(`player: ${playerChoice}, computer: ${computerChoice}`);
+
+  // compare hands
 }
