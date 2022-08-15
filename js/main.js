@@ -39,8 +39,11 @@ function startGame() {
 //! logic
 function playerChose(playerChoice) {
   const computerChoice = computerChose();
+  const winner = compareChoices(playerChoice, computerChoice);
 
-  compareChoices(playerChoice, computerChoice);
+  console.log(
+    `player: ${playerChoice}, computer: ${computerChoice}, winner: ${winner}`
+  );
 }
 
 function computerChose() {
@@ -51,5 +54,25 @@ function computerChose() {
 }
 
 function compareChoices(playerChoice, computerChoice) {
-  console.log(`player: ${playerChoice}, computer: ${computerChoice}`);
+  const rock = 'rock';
+  const paper = 'paper';
+  const scissors = 'scissors';
+
+  const computer = 'computer';
+  const player = 'player';
+  const tie = 'tie';
+
+  let winner;
+
+  if (playerChoice === computerChoice) {
+    winner = tie;
+  } else if (playerChoice === rock) {
+    computerChoice === paper ? (winner = computer) : (winner = player);
+  } else if (playerChoice === paper) {
+    computerChoice === scissors ? (winner = computer) : (winner = player);
+  } else if (playerChoice === scissors) {
+    computerChoice === rock ? (winner = computer) : (winner = player);
+  }
+
+  return winner;
 }
