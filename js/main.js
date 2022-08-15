@@ -17,7 +17,6 @@ choices.forEach((choice) =>
   choice.addEventListener('click', () => playerChoice(choice.id))
 );
 
-// logic
 loadGame();
 
 // utilities
@@ -32,7 +31,13 @@ function startGame() {
   scoreboard.style.display = 'grid';
 }
 
+// logic
 function playerChoice(id) {
   const playerChose = id;
   console.log(playerChose);
+}
+
+function computerChose() {
+  const choices = ['rock', 'paper', 'scissors'];
+  return Math.floor(Math.random() * 3);
 }
