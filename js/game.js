@@ -1,31 +1,31 @@
 export const game = {
   gameStarted: false,
-  playerScoreCounter: 0,
-  computerScoreCounter: 0,
+  playerPoints: 0,
+  computerPoints: 0,
 
   get status() {
     return this.gameStarted;
   },
 
   get playerScore() {
-    return this.playerScoreCounter;
+    return this.playerPoints;
   },
 
   get computerScore() {
-    return this.computerScoreCounter;
+    return this.computerPoints;
   },
 
   reset() {
     this.gameStarted = false;
-    this.playerScoreCounter = 0;
-    this.computerScoreCounter = 0;
+    this.playerPoints = 0;
+    this.computerPoints = 0;
   },
 
   playerEarnPoints() {
-    this.playerScoreCounter++;
+    this.playerPoints++;
   },
 
   computerEarnPoints() {
-    this.computerScoreCounter++;
+    this.computerPoints++;
   },
 };
