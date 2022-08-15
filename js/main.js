@@ -1,7 +1,5 @@
 import { game } from './game.js';
 
-const hands = game.choices;
-
 //! UI
 const startMenu = document.querySelector('.start-menu');
 const playButton = document.querySelector('#play-button');
@@ -40,23 +38,18 @@ function startGame() {
 
 //! logic
 function playerChose(playerChoice) {
-  const computerChoice = computerChose(hands);
+  const computerChoice = computerChose();
 
   compareChoices(playerChoice, computerChoice);
 }
 
-function computerChose(hands) {
+function computerChose() {
+  const choices = ['rock', 'paper', 'scissors'];
   const randomChoice = Math.floor(Math.random() * 3);
 
-  return hands[randomChoice];
+  return choices[randomChoice];
 }
 
 function compareChoices(playerChoice, computerChoice) {
   console.log(`player: ${playerChoice}, computer: ${computerChoice}`);
-
-<<<<<<< HEAD
-  // compare hands
-=======
-  
->>>>>>> 3ff6d1f6134655f35d353f1cd1a4421594456782
 }

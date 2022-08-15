@@ -3,8 +3,6 @@ export const game = {
   playerPoints: 0,
   computerPoints: 0,
 
-  choices: ['rock', 'paper', 'scissors'],
-
   get status() {
     return this.gameStarted;
   },
@@ -15,10 +13,6 @@ export const game = {
 
   get computerScore() {
     return this.computerPoints;
-  },
-
-  get hands() {
-    return this.choices;
   },
 
   reset() {
