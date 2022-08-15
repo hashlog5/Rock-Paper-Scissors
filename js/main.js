@@ -1,6 +1,6 @@
 import { game } from './game.js';
 
-//! UI
+//! DOM
 const startMenu = document.querySelector('.start-menu');
 const playButton = document.querySelector('#play-button');
 
@@ -54,14 +54,8 @@ function computerChose() {
 }
 
 function compareChoices(playerChoice, computerChoice) {
-  const rock = 'rock';
-  const paper = 'paper';
-  const scissors = 'scissors';
-
-  const computer = 'computer';
-  const player = 'player';
-  const tie = 'tie';
-
+  const [rock, paper, scissors] = ['rock', 'paper', 'scissors'];
+  const [computer, player, tie] = ['computer', 'player', 'tie'];
   let winner;
 
   if (playerChoice === computerChoice) {
