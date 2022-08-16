@@ -29,14 +29,15 @@ loadGame();
 //! utilities
 function loadGame() {
   game.reset();
-  playerScore.textContent = 0;
-  computerScore.textContent = 0;
 
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
   scoreboard.style.display = 'none';
+
   playerHand.src = ROCK_IMG;
   computerHand.src = ROCK_IMG;
+  playerScore.textContent = 0;
+  computerScore.textContent = 0;
 }
 
 function startGame() {
@@ -48,10 +49,6 @@ function startGame() {
 function showChoices(playerChoice, computerChoice) {
   playerHand.src = `assets/${playerChoice}.png`;
   computerHand.src = `assets/${computerChoice}.png`;
-}
-
-function endGame() {
-  loadGame();
 }
 
 //! logic
