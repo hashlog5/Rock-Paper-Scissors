@@ -20,6 +20,10 @@ const computerScore = document.querySelector('.computer-score');
 //! events
 play.addEventListener('click', startGame);
 
+options.forEach((option) =>
+  option.addEventListener('click', () => chooseOption(option.id))
+);
+
 choices.forEach((choice) =>
   choice.addEventListener('click', () => playerChose(choice.id))
 );
@@ -29,6 +33,7 @@ loadGame();
 
 //! utilities
 function loadGame() {
+  startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
   optionsMenu.style.display = 'none';
   scoreboard.style.display = 'none';
@@ -40,14 +45,30 @@ function startGame() {
   scoreboard.style.display = 'grid';
 }
 
+function gameOptions() {
+  choicesMenu.style.display = 'none';
+  optionsMenu.style.display = 'flex';
+}
+
+function chooseOption(option) {
+  option === 'play-again' ? playAgain() : endGame();
+}
+
+function playAgain() {
+  choicesMenu.style.display = 'flex';
+  optionsMenu.style.display = 'none';
+}
+
+function endGame() {
+  loadGame();
+}
+
 //! logic
 function playerChose(playerChoice) {
   const computerChoice = computerChose();
   const winner = compareChoices(playerChoice, computerChoice);
 
-  console.log(
-    `player: ${playerChoice}, computer: ${computerChoice}, winner: ${winner}`
-  );
+  gameOptions();
 }
 
 function computerChose() {
