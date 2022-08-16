@@ -1,32 +1,28 @@
 /** game-menu */
 .start-menu,
-.choices-menu {
+.choices-menu,
+.options-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.play-invite,
 .prompt {
   color: var(--choice-color);
   font-size: 2rem;
 }
 
 /** start-menu */
-#play-button {
+#play {
   margin: 1rem 0;
   padding: 0.9rem 1rem 0.8rem 1.45rem;
 
   background: var(--dark-color);
-  color: var(--button-color);
+  color: var(--win-color);
   font-size: 2.75rem;
   border-radius: 50%;
   cursor: pointer;
-}
-
-#play-button:hover {
-  color: var(--choice-color);
 }
 
 /** choices-menu */
@@ -49,15 +45,44 @@
   cursor: pointer;
 }
 
+/** options-menu */
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.75rem;
+}
+
+#yes,
+#no {
+  margin: 1rem 0;
+  padding: 1rem;
+
+  background: var(--dark-color);
+  font-size: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#yes {
+  color: var(--win-color);
+}
+
+#no {
+  color: var(--lose-color);
+}
+
+/** buttons:hover */
+#play:hover,
 #rock:hover,
 #paper:hover,
-#scissors:hover {
+#scissors:hover,
+#yes:hover,
+#no:hover {
   color: var(--choice-color);
 }
 
 /** font-sizes */
 @media (max-width: 760px) {
-  .play-invite,
   .prompt {
     font-size: 1.75rem;
   }

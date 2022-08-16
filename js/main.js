@@ -2,10 +2,13 @@ import { game } from './game.js';
 
 //! DOM
 const startMenu = document.querySelector('.start-menu');
-const playButton = document.querySelector('#play-button');
+const play = document.querySelector('#play');
 
 const choicesMenu = document.querySelector('.choices-menu');
 const choices = document.querySelectorAll('.choices i');
+
+const optionsMenu = document.querySelector('.options-menu');
+const options = document.querySelectorAll('.options i');
 
 const playerHand = document.querySelector('.player-hand');
 const computerHand = document.querySelector('.computer-hand');
@@ -15,7 +18,7 @@ const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
 //! events
-playButton.addEventListener('click', startGame);
+play.addEventListener('click', startGame);
 
 choices.forEach((choice) =>
   choice.addEventListener('click', () => playerChose(choice.id))
@@ -27,6 +30,7 @@ loadGame();
 //! utilities
 function loadGame() {
   choicesMenu.style.display = 'none';
+  optionsMenu.style.display = 'none';
   scoreboard.style.display = 'none';
 }
 
