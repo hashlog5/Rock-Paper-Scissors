@@ -12,8 +12,8 @@
   --hand-color: #2d7560;
   --choice-color: #ffa500;
 
-  --win-color: #28a745;
-  --lose-color: #dc3545;
+  --play-color: #28a745;
+  --end-color: #dc3545;
 }
 
 body {
