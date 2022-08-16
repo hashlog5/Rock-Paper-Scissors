@@ -68,6 +68,7 @@ function playerChose(playerChoice) {
   const computerChoice = computerChose();
   const winner = compareChoices(playerChoice, computerChoice);
 
+  updateScores(winner);
   gameOptions();
 }
 
@@ -94,4 +95,28 @@ function compareChoices(playerChoice, computerChoice) {
   }
 
   return winner;
+}
+
+function updateScores(winner) {
+  switch (winner) {
+    default:
+      console.log('tie');
+      break;
+
+    case 'player':
+      game.playerEarnPoints();
+      
+      console.log(
+        `player wins | playerScore: ${game.playerScore} | computerScore: ${game.computerScore}`
+      );
+      break;
+
+    case 'computer':
+      game.computerEarnPoints();
+
+      console.log(
+        `computer wins | playerScore: ${game.playerScore} | computerScore: ${game.computerScore}`
+      );
+      break;
+  }
 }
