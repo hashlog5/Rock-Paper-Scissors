@@ -33,6 +33,10 @@ loadGame();
 
 //! utilities
 function loadGame() {
+  game.reset();
+  playerScore.textContent = 0;
+  computerScore.textContent = 0;
+
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
   optionsMenu.style.display = 'none';
@@ -105,7 +109,8 @@ function updateScores(winner) {
 
     case 'player':
       game.playerEarnPoints();
-      
+      playerScore.textContent = game.playerScore;
+
       console.log(
         `player wins | playerScore: ${game.playerScore} | computerScore: ${game.computerScore}`
       );
@@ -113,6 +118,7 @@ function updateScores(winner) {
 
     case 'computer':
       game.computerEarnPoints();
+      computerScore.textContent = game.computerScore;
 
       console.log(
         `computer wins | playerScore: ${game.playerScore} | computerScore: ${game.computerScore}`

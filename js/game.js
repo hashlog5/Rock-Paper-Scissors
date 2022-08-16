@@ -1,11 +1,6 @@
 export const game = {
-  gameStarted: false,
   playerPoints: 0,
   computerPoints: 0,
-
-  get status() {
-    return this.gameStarted;
-  },
 
   get playerScore() {
     return this.playerPoints;
@@ -16,7 +11,6 @@ export const game = {
   },
 
   reset() {
-    this.gameStarted = false;
     this.playerPoints = 0;
     this.computerPoints = 0;
   },
