@@ -32,7 +32,6 @@ function loadGame() {
 
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
-  scoreboard.style.display = 'none';
 
   playerHand.src = ROCK_IMG;
   computerHand.src = ROCK_IMG;
@@ -43,7 +42,7 @@ function loadGame() {
 function startGame() {
   startMenu.style.display = 'none';
   choicesMenu.style.display = 'flex';
-  scoreboard.style.display = 'grid';
+  scoreboard.classList.toggle('show-scoreboard');
 }
 
 function showChoices(playerChoice, computerChoice) {
