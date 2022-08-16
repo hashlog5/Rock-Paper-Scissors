@@ -39,7 +39,7 @@
   padding: 1rem;
 
   background: var(--dark-color);
-  color: var(--button-color);
+  color: var(--hand-color);
   font-size: 2.55rem;
   border-radius: 50%;
   cursor: pointer;
@@ -52,8 +52,8 @@
   gap: 2.75rem;
 }
 
-#yes,
-#no {
+#play-again,
+#end-game {
   margin: 1rem 0;
   padding: 1rem;
 
@@ -63,11 +63,11 @@
   cursor: pointer;
 }
 
-#yes {
+#play-again {
   color: var(--win-color);
 }
 
-#no {
+#end-game {
   color: var(--lose-color);
 }
 
@@ -76,8 +76,8 @@
 #rock:hover,
 #paper:hover,
 #scissors:hover,
-#yes:hover,
-#no:hover {
+#play-again:hover,
+#end-game:hover {
   color: var(--choice-color);
 }
 
