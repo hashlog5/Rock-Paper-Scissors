@@ -53,7 +53,7 @@ function showChoices(playerChoice, computerChoice) {
 //! logic
 function playerChose(playerChoice) {
   const computerChoice = computerChose();
-  const winner = compareChoices(playerChoice, computerChoice);
+  const winner = chooseWinner(playerChoice, computerChoice);
 
   showChoices(playerChoice, computerChoice);
   updateScores(winner);
@@ -66,7 +66,7 @@ function computerChose() {
   return choices[randomChoice];
 }
 
-function compareChoices(playerChoice, computerChoice) {
+function chooseWinner(playerChoice, computerChoice) {
   const [rock, paper, scissors] = ['rock', 'paper', 'scissors'];
   const [computer, player, tie] = ['computer', 'player', 'tie'];
   let winner;
