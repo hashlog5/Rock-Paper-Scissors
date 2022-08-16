@@ -1,7 +1,6 @@
 /** game-menu */
 .start-menu,
-.choices-menu,
-.options-menu {
+.choices-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,39 +44,11 @@
   cursor: pointer;
 }
 
-/** options-menu */
-.options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.75rem;
-}
-
-#play-again,
-#end-game {
-  margin: 1rem 0;
-  padding: 1rem;
-
-  background: var(--dark-color);
-  font-size: 2.55rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#play-again {
-  color: var(--play-color);
-}
-
-#end-game {
-  color: var(--end-color);
-}
-
 /** buttons:hover */
 #play:hover,
 #rock:hover,
 #paper:hover,
-#scissors:hover,
-#play-again:hover,
-#end-game:hover {
+#scissors:hover {
   color: var(--choice-color);
 }
 
