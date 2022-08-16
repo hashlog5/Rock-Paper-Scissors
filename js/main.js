@@ -1,5 +1,7 @@
 import { game } from './game.js';
 
+const ROCK_IMG = 'assets/rock.png';
+
 //! DOM
 const startMenu = document.querySelector('.start-menu');
 const play = document.querySelector('#play');
@@ -41,8 +43,8 @@ function loadGame() {
   choicesMenu.style.display = 'none';
   optionsMenu.style.display = 'none';
   scoreboard.style.display = 'none';
-  playerHand.src = `assets/rock.png`;
-  computerHand.src = `assets/rock.png`;
+  playerHand.src = ROCK_IMG;
+  computerHand.src = ROCK_IMG;
 }
 
 function startGame() {
@@ -118,19 +120,11 @@ function updateScores(winner) {
     case 'player':
       game.playerEarnPoints();
       playerScore.textContent = game.playerScore;
-
-      console.log(
-        `player wins | playerScore: ${game.playerScore} | computerScore: ${game.computerScore}`
-      );
       break;
 
     case 'computer':
       game.computerEarnPoints();
       computerScore.textContent = game.computerScore;
-
-      console.log(
-        `computer wins | playerScore: ${game.playerScore} | computerScore: ${game.computerScore}`
-      );
       break;
   }
 }
