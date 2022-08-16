@@ -41,12 +41,19 @@ function loadGame() {
   choicesMenu.style.display = 'none';
   optionsMenu.style.display = 'none';
   scoreboard.style.display = 'none';
+  playerHand.src = `assets/rock.png`;
+  computerHand.src = `assets/rock.png`;
 }
 
 function startGame() {
   startMenu.style.display = 'none';
   choicesMenu.style.display = 'flex';
   scoreboard.style.display = 'grid';
+}
+
+function showChoices(playerChoice, computerChoice) {
+  playerHand.src = `assets/${playerChoice}.png`;
+  computerHand.src = `assets/${computerChoice}.png`;
 }
 
 function gameOptions() {
@@ -72,6 +79,7 @@ function playerChose(playerChoice) {
   const computerChoice = computerChose();
   const winner = compareChoices(playerChoice, computerChoice);
 
+  showChoices(playerChoice, computerChoice);
   updateScores(winner);
   gameOptions();
 }
