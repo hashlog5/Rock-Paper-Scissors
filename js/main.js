@@ -57,10 +57,14 @@ function resetGameStatus() {
 }
 
 function playGame() {
+  disableButtons();
+
   startMenu.style.display = 'none';
   choicesMenu.style.display = 'flex';
   scoreboard.classList.add('show-scoreboard');
   quitMenu.classList.add('show-quit-menu');
+
+  setTimeout(enableButtons, 500);
 }
 
 function animateHands() {
@@ -125,18 +129,14 @@ function playerChose(playerChoice) {
   fistHands();
   resetWinnerStatus();
   disableButtons();
-  setTimeout(() => {
-    animateHands();
-  }, 250);
+  setTimeout(animateHands, 250);
 
   setTimeout(() => {
     showChoices(playerChoice, computerChoice);
     updateScores(winner);
   }, 1750);
 
-  setTimeout(() => {
-    enableButtons();
-  }, 2000);
+  setTimeout(enableButtons, 2000);
 }
 
 function computerChose() {
