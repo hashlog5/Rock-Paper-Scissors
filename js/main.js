@@ -1,6 +1,10 @@
 import { game } from './game.js';
 
+//! html & css variables
 const ROCK_IMG = 'assets/rock.png';
+const PLAY_COLOR = 'var(--play-color)';
+const QUIT_COLOR = 'var(--quit-color)';
+const LIGHT_COLOR = 'var(--light-color)';
 
 //! DOM
 const startMenu = document.querySelector('.start-menu');
@@ -22,7 +26,7 @@ const quitMenu = document.querySelector('.quit-menu');
 const quit = document.querySelector('#quit');
 
 //! events
-play.addEventListener('click', startGame);
+play.addEventListener('click', playGame);
 
 choices.forEach((choice) =>
   choice.addEventListener('click', () => playerChose(choice.id))
@@ -36,26 +40,23 @@ loadGame();
 //! utilities
 function loadGame() {
   game.reset();
-
-  startMenu.style.display = 'flex';
-  choicesMenu.style.display = 'none';
-  scoreboard.classList.remove('show-scoreboard');
-  quitMenu.classList.remove('show-quit-menu');
-
+  resetGameStatus();
   fistHands();
   resetWinnerStatus();
+}
+
+function resetGameStatus() {
+  startMenu.style.display = 'flex';
+  choicesMenu.style.display = 'none';
+
+  scoreboard.classList.remove('show-scoreboard');
   playerScore.textContent = 0;
   computerScore.textContent = 0;
+
+  quitMenu.classList.remove('show-quit-menu');
 }
 
-function resetWinnerStatus() {
-  player.style.color = 'var(--light-color)';
-  player.style.fontWeight = 'normal';
-  computer.style.color = 'var(--light-color)';
-  computer.style.fontWeight = 'normal';
-}
-
-function startGame() {
+function playGame() {
   startMenu.style.display = 'none';
   choicesMenu.style.display = 'flex';
   scoreboard.classList.add('show-scoreboard');
@@ -82,14 +83,38 @@ function enableButtons() {
   quitMenu.style.pointerEvents = 'all';
 }
 
-function fistHands() {
-  playerHand.src = ROCK_IMG;
-  computerHand.src = ROCK_IMG;
-}
-
 function showChoices(playerChoice, computerChoice) {
   playerHand.src = `assets/${playerChoice}.png`;
   computerHand.src = `assets/${computerChoice}.png`;
+}
+
+function setPlayerAsWinner() {
+  player.style.color = PLAY_COLOR;
+  player.style.fontWeight = 'bold';
+
+  computer.style.color = QUIT_COLOR;
+  computer.style.fontWeight = 'normal';
+}
+
+function setComputerAsWinner() {
+  computer.style.color = PLAY_COLOR;
+  computer.style.fontWeight = 'bold';
+
+  player.style.color = QUIT_COLOR;
+  player.style.fontWeight = 'normal';
+}
+
+function resetWinnerStatus() {
+  player.style.color = LIGHT_COLOR;
+  player.style.fontWeight = 'normal';
+
+  computer.style.color = LIGHT_COLOR;
+  computer.style.fontWeight = 'normal';
+}
+
+function fistHands() {
+  playerHand.src = ROCK_IMG;
+  computerHand.src = ROCK_IMG;
 }
 
 //! logic
@@ -146,20 +171,15 @@ function updateScores(winner) {
 
     case 'player':
       game.playerEarnPoints();
+      setPlayerAsWinner();
       playerScore.textContent = game.playerScore;
-      player.style.color = 'var(--play-color)';
-      player.style.fontWeight = 'bold';
-      computer.style.color = 'var(--quit-color)';
-      computer.style.fontWeight = 'normal';
+
       break;
 
     case 'computer':
       game.computerEarnPoints();
+      setComputerAsWinner();
       computerScore.textContent = game.computerScore;
-      computer.style.color = 'var(--play-color)';
-      computer.style.fontWeight = 'bold';
-      player.style.color = 'var(--quit-color)';
-      player.style.fontWeight = 'normal';
       break;
   }
 }
