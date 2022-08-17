@@ -1,0 +1,33 @@
+/** quit-menu */
+.quit-menu {
+  display: flex;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.33s ease-in-out;
+}
+
+.show-quit-menu {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.disable-quit-menu {
+  pointer-events: none;
+}
+
+#quit {
+  width: 55%;
+  padding: 0.5rem 0;
+
+  border: none;
+  border-radius: 10px;
+  background: var(--dark-color);
+  color: var(--light-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#quit:hover {
+  color: var(--quit-color);
+}
