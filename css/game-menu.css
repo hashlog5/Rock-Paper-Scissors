@@ -70,9 +70,10 @@
 
 #quit {
   width: 55%;
-  margin: 1rem 0;
-  padding: 1rem 0;
+  /* margin: 1rem 0; */
+  padding: 0.5rem 0;
 
+  border: none;
   border-radius: 10px;
   background: var(--dark-color);
   color: var(--light-color);
