@@ -40,8 +40,7 @@ function loadGame() {
   scoreboard.classList.remove('show-scoreboard');
   quitMenu.classList.remove('show-quit-menu');
 
-  playerHand.src = ROCK_IMG;
-  computerHand.src = ROCK_IMG;
+  hideChoices();
   playerScore.textContent = 0;
   computerScore.textContent = 0;
 }
@@ -51,6 +50,21 @@ function startGame() {
   choicesMenu.style.display = 'flex';
   scoreboard.classList.add('show-scoreboard');
   quitMenu.classList.add('show-quit-menu');
+}
+
+function animateHands() {
+  playerHand.style.animation = 'shakePlayer 2s ease';
+  computerHand.style.animation = 'shakeComputer 2s ease';
+
+  setTimeout(() => {
+    playerHand.style.animation = '';
+    computerHand.style.animation = '';
+  }, 2000);
+}
+
+function hideChoices() {
+  playerHand.src = ROCK_IMG;
+  computerHand.src = ROCK_IMG;
 }
 
 function showChoices(playerChoice, computerChoice) {
@@ -63,8 +77,13 @@ function playerChose(playerChoice) {
   const computerChoice = computerChose();
   const winner = chooseWinner(playerChoice, computerChoice);
 
-  showChoices(playerChoice, computerChoice);
-  updateScores(winner);
+  hideChoices();
+  animateHands();
+
+  setTimeout(() => {
+    showChoices(playerChoice, computerChoice);
+    updateScores(winner);
+  }, 2000);
 }
 
 function computerChose() {
