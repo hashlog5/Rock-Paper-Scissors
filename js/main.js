@@ -136,7 +136,7 @@ function playerChose(playerChoice) {
 
   setTimeout(() => {
     enableButtons();
-  }, 1950);
+  }, 2000);
 }
 
 function computerChose() {
