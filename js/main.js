@@ -32,6 +32,7 @@ play.addEventListener('click', playGame);
 
 choices.forEach((choice) =>
   choice.addEventListener('click', () => {
+    //! BUG: setting choice-color here seems to remove hover effects on choices
     choice.style.color = CHOICE_COLOR;
     playerChose(choice, choice.id);
   })
