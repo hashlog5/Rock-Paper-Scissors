@@ -35,6 +35,10 @@
   gap: 2.75rem;
 }
 
+.disable-choices-menu {
+  pointer-events: none;
+}
+
 #rock,
 #paper,
 #scissors {
@@ -66,6 +70,10 @@
 .show-quit-menu {
   opacity: 1;
   pointer-events: all;
+}
+
+.disable-quit-menu {
+  pointer-events: none;
 }
 
 #quit {

@@ -62,6 +62,16 @@ function animateHands() {
   }, 1500);
 }
 
+function disableButtons() {
+  choicesMenu.style.pointerEvents = 'none';
+  quitMenu.style.pointerEvents = 'none';
+}
+
+function enableButtons() {
+  choicesMenu.style.pointerEvents = 'all';
+  quitMenu.style.pointerEvents = 'all';
+}
+
 function hideChoices() {
   playerHand.src = ROCK_IMG;
   computerHand.src = ROCK_IMG;
@@ -78,6 +88,7 @@ function playerChose(playerChoice) {
   const winner = chooseWinner(playerChoice, computerChoice);
 
   hideChoices();
+  disableButtons();
   setTimeout(() => {
     animateHands();
   }, 250);
@@ -86,6 +97,10 @@ function playerChose(playerChoice) {
     showChoices(playerChoice, computerChoice);
     updateScores(winner);
   }, 1750);
+
+  setTimeout(() => {
+    enableButtons();
+  }, 1950);
 }
 
 function computerChose() {
