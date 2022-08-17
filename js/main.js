@@ -32,7 +32,6 @@ play.addEventListener('click', playGame);
 
 choices.forEach((choice) =>
   choice.addEventListener('click', () => {
-    //! BUG: setting choice-color here seems to remove hover effects on choices
     choice.style.color = CHOICE_COLOR;
     playerChose(choice, choice.id);
   })
@@ -144,7 +143,7 @@ function playerChose(choice, playerChoice) {
 
   setTimeout(() => {
     enableButtons();
-    choice.style.color = HAND_COLOR;
+    choice.style.color = '';
   }, 2000);
 }
 
