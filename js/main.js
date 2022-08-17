@@ -64,8 +64,8 @@ function playGame() {
 }
 
 function animateHands() {
-  playerHand.style.animation = 'shakePlayer 2s ease';
-  computerHand.style.animation = 'shakeComputer 2s ease';
+  playerHand.style.animation = 'shakePlayer 1.75s ease';
+  computerHand.style.animation = 'shakeComputer 1.75s ease';
 
   setTimeout(() => {
     playerHand.style.animation = '';
