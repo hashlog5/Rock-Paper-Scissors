@@ -2,9 +2,11 @@ import { game } from './game.js';
 
 //! html & css variables
 const ROCK_IMG = 'assets/rock.png';
+const LIGHT_COLOR = 'var(--light-color)';
+const HAND_COLOR = 'var(--hand-color)';
+const CHOICE_COLOR = 'var(--choice-color)';
 const PLAY_COLOR = 'var(--play-color)';
 const QUIT_COLOR = 'var(--quit-color)';
-const LIGHT_COLOR = 'var(--light-color)';
 
 //! DOM
 const startMenu = document.querySelector('.start-menu');
@@ -29,7 +31,10 @@ const quit = document.querySelector('#quit');
 play.addEventListener('click', playGame);
 
 choices.forEach((choice) =>
-  choice.addEventListener('click', () => playerChose(choice.id))
+  choice.addEventListener('click', () => {
+    choice.style.color = CHOICE_COLOR;
+    playerChose(choice, choice.id);
+  })
 );
 
 quit.addEventListener('click', loadGame);
@@ -122,7 +127,7 @@ function fistHands() {
 }
 
 //! logic
-function playerChose(playerChoice) {
+function playerChose(choice, playerChoice) {
   const computerChoice = computerChose();
   const winner = chooseWinner(playerChoice, computerChoice);
 
@@ -134,6 +139,7 @@ function playerChose(playerChoice) {
   setTimeout(() => {
     showChoices(playerChoice, computerChoice);
     updateScores(winner);
+    choice.style.color = HAND_COLOR;
   }, 1750);
 
   setTimeout(enableButtons, 2000);
