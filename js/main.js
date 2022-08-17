@@ -16,12 +16,17 @@ const scoreboard = document.querySelector('.scoreboard');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
+const quitMenu = document.querySelector('.quit-menu');
+const quit = document.querySelector('#quit');
+
 //! events
 play.addEventListener('click', startGame);
 
 choices.forEach((choice) =>
   choice.addEventListener('click', () => playerChose(choice.id))
 );
+
+quit.addEventListener('click', loadGame);
 
 //! app
 loadGame();
@@ -32,6 +37,8 @@ function loadGame() {
 
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
+  scoreboard.classList.remove('show-scoreboard');
+  quitMenu.classList.remove('show-quit-menu');
 
   playerHand.src = ROCK_IMG;
   computerHand.src = ROCK_IMG;
@@ -42,7 +49,8 @@ function loadGame() {
 function startGame() {
   startMenu.style.display = 'none';
   choicesMenu.style.display = 'flex';
-  scoreboard.classList.toggle('show-scoreboard');
+  scoreboard.classList.add('show-scoreboard');
+  quitMenu.classList.add('show-quit-menu');
 }
 
 function showChoices(playerChoice, computerChoice) {

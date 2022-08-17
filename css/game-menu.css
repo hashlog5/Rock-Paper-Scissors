@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+#play:hover {
+  color: var(--choice-color);
+}
+
 /** choices-menu */
 .choices {
   display: grid;
@@ -44,12 +48,40 @@
   cursor: pointer;
 }
 
-/** buttons:hover */
-#play:hover,
 #rock:hover,
 #paper:hover,
 #scissors:hover {
   color: var(--choice-color);
+}
+
+/** quit-menu */
+.quit-menu {
+  display: flex;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.show-quit-menu {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#quit {
+  width: 55%;
+  margin: 1rem 0;
+  padding: 1rem 0;
+
+  border-radius: 10px;
+  background: var(--dark-color);
+  color: var(--light-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#quit:hover {
+  color: var(--quit-color);
 }
 
 /** font-sizes */
