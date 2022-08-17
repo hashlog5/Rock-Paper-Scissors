@@ -13,6 +13,8 @@ const playerHand = document.querySelector('.player-hand');
 const computerHand = document.querySelector('.computer-hand');
 
 const scoreboard = document.querySelector('.scoreboard');
+const player = document.querySelector('.player');
+const computer = document.querySelector('.computer');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
@@ -136,11 +138,19 @@ function updateScores(winner) {
     case 'player':
       game.playerEarnPoints();
       playerScore.textContent = game.playerScore;
+      player.style.color = 'var(--play-color)';
+      player.style.fontWeight = 'bold';
+      computer.style.color = 'var(--quit-color)';
+      computer.style.fontWeight = 'normal';
       break;
 
     case 'computer':
       game.computerEarnPoints();
       computerScore.textContent = game.computerScore;
+      computer.style.color = 'var(--play-color)';
+      computer.style.fontWeight = 'bold';
+      player.style.color = 'var(--quit-color)';
+      player.style.fontWeight = 'normal';
       break;
   }
 }
