@@ -45,6 +45,11 @@ function loadGame() {
   hideChoices();
   playerScore.textContent = 0;
   computerScore.textContent = 0;
+
+  player.style.color = 'var(--light-color)';
+  player.style.fontWeight = 'normal';
+  computer.style.color = 'var(--light-color)';
+  computer.style.fontWeight = 'normal';
 }
 
 function startGame() {
@@ -133,6 +138,10 @@ function chooseWinner(playerChoice, computerChoice) {
 function updateScores(winner) {
   switch (winner) {
     default:
+      player.style.color = 'var(--light-color)';
+      player.style.fontWeight = 'normal';
+      computer.style.color = 'var(--light-color)';
+      computer.style.fontWeight = 'normal';
       break;
 
     case 'player':
