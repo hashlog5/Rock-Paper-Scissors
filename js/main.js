@@ -42,10 +42,13 @@ function loadGame() {
   scoreboard.classList.remove('show-scoreboard');
   quitMenu.classList.remove('show-quit-menu');
 
-  hideChoices();
+  fistHands();
+  resetWinnerStatus();
   playerScore.textContent = 0;
   computerScore.textContent = 0;
+}
 
+function resetWinnerStatus() {
   player.style.color = 'var(--light-color)';
   player.style.fontWeight = 'normal';
   computer.style.color = 'var(--light-color)';
@@ -79,7 +82,7 @@ function enableButtons() {
   quitMenu.style.pointerEvents = 'all';
 }
 
-function hideChoices() {
+function fistHands() {
   playerHand.src = ROCK_IMG;
   computerHand.src = ROCK_IMG;
 }
@@ -94,7 +97,8 @@ function playerChose(playerChoice) {
   const computerChoice = computerChose();
   const winner = chooseWinner(playerChoice, computerChoice);
 
-  hideChoices();
+  fistHands();
+  resetWinnerStatus();
   disableButtons();
   setTimeout(() => {
     animateHands();
@@ -138,10 +142,6 @@ function chooseWinner(playerChoice, computerChoice) {
 function updateScores(winner) {
   switch (winner) {
     default:
-      player.style.color = 'var(--light-color)';
-      player.style.fontWeight = 'normal';
-      computer.style.color = 'var(--light-color)';
-      computer.style.fontWeight = 'normal';
       break;
 
     case 'player':
