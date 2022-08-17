@@ -139,10 +139,12 @@ function playerChose(choice, playerChoice) {
   setTimeout(() => {
     showChoices(playerChoice, computerChoice);
     updateScores(winner);
-    choice.style.color = HAND_COLOR;
   }, 1750);
 
-  setTimeout(enableButtons, 2000);
+  setTimeout(() => {
+    enableButtons();
+    choice.style.color = HAND_COLOR;
+  }, 2000);
 }
 
 function computerChose() {
