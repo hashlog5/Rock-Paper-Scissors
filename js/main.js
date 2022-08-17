@@ -78,12 +78,14 @@ function playerChose(playerChoice) {
   const winner = chooseWinner(playerChoice, computerChoice);
 
   hideChoices();
-  animateHands();
+  setTimeout(() => {
+    animateHands();
+  }, 250);
 
   setTimeout(() => {
     showChoices(playerChoice, computerChoice);
     updateScores(winner);
-  }, 2000);
+  }, 2250);
 }
 
 function computerChose() {
