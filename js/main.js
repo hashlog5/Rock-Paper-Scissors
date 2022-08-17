@@ -59,7 +59,7 @@ function animateHands() {
   setTimeout(() => {
     playerHand.style.animation = '';
     computerHand.style.animation = '';
-  }, 2000);
+  }, 1500);
 }
 
 function hideChoices() {
@@ -85,7 +85,7 @@ function playerChose(playerChoice) {
   setTimeout(() => {
     showChoices(playerChoice, computerChoice);
     updateScores(winner);
-  }, 2250);
+  }, 1750);
 }
 
 function computerChose() {
