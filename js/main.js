@@ -38,20 +38,20 @@ choices.forEach((choice) =>
   })
 );
 
-quit.addEventListener('click', loadGame);
+quit.addEventListener('click', resetGame);
 
 //! app
-loadGame();
+resetGame();
 
 //! utilities
-function loadGame() {
-  game.reset();
-  resetGameStatus();
-  fistHands();
+function resetGame() {
+  resetGameDisplay();
+  showFists();
   resetWinnerStatus();
+  game.resetScores();
 }
 
-function resetGameStatus() {
+function resetGameDisplay() {
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
 
@@ -60,6 +60,19 @@ function resetGameStatus() {
   computerScore.textContent = 0;
 
   quitMenu.classList.remove('show-quit-menu');
+}
+
+function showFists() {
+  playerHand.src = ROCK_IMG;
+  computerHand.src = ROCK_IMG;
+}
+
+function resetWinnerStatus() {
+  player.style.color = LIGHT_COLOR;
+  player.style.fontWeight = 'normal';
+
+  computer.style.color = LIGHT_COLOR;
+  computer.style.fontWeight = 'normal';
 }
 
 function playGame() {
@@ -73,16 +86,6 @@ function playGame() {
   setTimeout(enableButtons, 500);
 }
 
-function animateHands() {
-  playerHand.style.animation = 'shakePlayerHand 1.75s ease';
-  computerHand.style.animation = 'shakeComputerHand 1.75s ease';
-
-  setTimeout(() => {
-    playerHand.style.animation = '';
-    computerHand.style.animation = '';
-  }, 1500);
-}
-
 function disableButtons() {
   choicesMenu.style.pointerEvents = 'none';
   quitMenu.style.pointerEvents = 'none';
@@ -91,6 +94,16 @@ function disableButtons() {
 function enableButtons() {
   choicesMenu.style.pointerEvents = 'all';
   quitMenu.style.pointerEvents = 'all';
+}
+
+function animateHands() {
+  playerHand.style.animation = 'shakePlayerHand 1.75s ease';
+  computerHand.style.animation = 'shakeComputerHand 1.75s ease';
+
+  setTimeout(() => {
+    playerHand.style.animation = '';
+    computerHand.style.animation = '';
+  }, 1500);
 }
 
 function showChoices(playerChoice, computerChoice) {
@@ -114,25 +127,12 @@ function setComputerAsWinner() {
   player.style.fontWeight = 'normal';
 }
 
-function resetWinnerStatus() {
-  player.style.color = LIGHT_COLOR;
-  player.style.fontWeight = 'normal';
-
-  computer.style.color = LIGHT_COLOR;
-  computer.style.fontWeight = 'normal';
-}
-
-function fistHands() {
-  playerHand.src = ROCK_IMG;
-  computerHand.src = ROCK_IMG;
-}
-
 //! logic
 function playerChose(choice, playerChoice) {
   const computerChoice = computerChose();
   const winner = chooseWinner(playerChoice, computerChoice);
 
-  fistHands();
+  showFists();
   resetWinnerStatus();
   disableButtons();
   setTimeout(animateHands, 250);
@@ -143,8 +143,8 @@ function playerChose(choice, playerChoice) {
   }, 1750);
 
   setTimeout(() => {
-    enableButtons();
     choice.style.color = '';
+    enableButtons();
   }, 2000);
 }
 

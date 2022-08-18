@@ -7,6 +7,10 @@
   transition: opacity 0.33s ease-in-out;
 }
 
+.show-scoreboard {
+  opacity: 1;
+}
+
 .player-scoreboard,
 .computer-scoreboard {
   margin: 1rem 0;
@@ -20,8 +24,4 @@
   padding: 0.75rem;
 
   font-size: 2.75rem;
-}
-
-.show-scoreboard {
-  opacity: 1;
 }

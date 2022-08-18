@@ -10,7 +10,7 @@ export const game = {
     return this.computerPoints;
   },
 
-  reset() {
+  resetScores() {
     this.playerPoints = 0;
     this.computerPoints = 0;
   },

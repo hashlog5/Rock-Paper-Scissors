@@ -9,7 +9,6 @@
 
 .show-quit-menu {
   opacity: 1;
-  pointer-events: all;
 }
 
 .disable-quit-menu {
