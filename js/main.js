@@ -58,7 +58,7 @@ const computerChose = () => {
 
 const chooseWinner = (playerChoice, computerChoice) => {
   const [rock, paper, scissors] = game.choices;
-  const [player, computer, tie] = game.winner;
+  const [player, computer, tie] = game.winnerSelection;
   let winner;
 
   if (playerChoice === computerChoice) {
