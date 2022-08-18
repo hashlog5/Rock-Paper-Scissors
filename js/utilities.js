@@ -22,7 +22,7 @@ const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
 //! utilities
-export function resetGameDisplay() {
+export const resetGameDisplay = () => {
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
 
@@ -31,22 +31,22 @@ export function resetGameDisplay() {
   computerScore.textContent = 0;
 
   quitMenu.classList.remove('show-quit-menu');
-}
+};
 
-export function showFists() {
+export const showFists = () => {
   playerHand.src = ROCK_IMG;
   computerHand.src = ROCK_IMG;
-}
+};
 
-export function resetWinnerStatus() {
+export const resetWinnerStatus = () => {
   player.style.color = LIGHT_COLOR;
   player.style.fontWeight = 'normal';
 
   computer.style.color = LIGHT_COLOR;
   computer.style.fontWeight = 'normal';
-}
+};
 
-export function playGame() {
+export const playGame = () => {
   disableButtons();
 
   startMenu.style.display = 'none';
@@ -55,19 +55,19 @@ export function playGame() {
   quitMenu.classList.add('show-quit-menu');
 
   setTimeout(enableButtons, 500);
-}
+};
 
-export function disableButtons() {
+export const disableButtons = () => {
   choicesMenu.style.pointerEvents = 'none';
   quitMenu.style.pointerEvents = 'none';
-}
+};
 
-export function enableButtons() {
+export const enableButtons = () => {
   choicesMenu.style.pointerEvents = 'all';
   quitMenu.style.pointerEvents = 'all';
-}
+};
 
-export function animateHands() {
+export const animateHands = () => {
   playerHand.style.animation = 'shakePlayerHand 1.75s ease';
   computerHand.style.animation = 'shakeComputerHand 1.75s ease';
 
@@ -75,41 +75,41 @@ export function animateHands() {
     playerHand.style.animation = '';
     computerHand.style.animation = '';
   }, 1500);
-}
+};
 
-export function showChoices(playerChoice, computerChoice) {
+export const showChoices = (playerChoice, computerChoice) => {
   playerHand.src = `assets/${playerChoice}.png`;
   computerHand.src = `assets/${computerChoice}.png`;
-}
+};
 
-export function setPlayerAsWinner() {
+export const setPlayerAsWinner = () => {
   player.style.color = PLAY_COLOR;
   player.style.fontWeight = 'bold';
 
   computer.style.color = QUIT_COLOR;
   computer.style.fontWeight = 'normal';
-}
+};
 
-export function setComputerAsWinner() {
+export const setComputerAsWinner = () => {
   computer.style.color = PLAY_COLOR;
   computer.style.fontWeight = 'bold';
 
   player.style.color = QUIT_COLOR;
   player.style.fontWeight = 'normal';
-}
+};
 
-export function updatePlayerScore(playerPoints) {
+export const updatePlayerScore = (playerPoints) => {
   playerScore.textContent = playerPoints;
-}
+};
 
-export function updateComputerScore(computerPoints) {
+export const updateComputerScore = (computerPoints) => {
   computerScore.textContent = computerPoints;
-}
+};
 
-export function setChoiceColor(choice) {
+export const setChoiceColor = (choice) => {
   choice.style.color = CHOICE_COLOR;
-}
+};
 
-export function removeChoiceColor(choice) {
+export const removeChoiceColor = (choice) => {
   choice.style.color = '';
-}
+};

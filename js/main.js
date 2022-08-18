@@ -21,18 +21,15 @@ const play = document.querySelector('#play');
 const choices = document.querySelectorAll('.choices i');
 const quit = document.querySelector('#quit');
 
-//! app
-resetGame();
-
-function resetGame() {
+//! logic
+const resetGame = () => {
   resetGameDisplay();
   showFists();
   resetWinnerStatus();
   game.resetScores();
-}
+};
 
-//! logic
-function playerChose(choice, playerChoice) {
+const playerChose = (choice, playerChoice) => {
   const computerChoice = computerChose();
   const winner = chooseWinner(playerChoice, computerChoice);
 
@@ -50,16 +47,16 @@ function playerChose(choice, playerChoice) {
     removeChoiceColor(choice);
     enableButtons();
   }, 2000);
-}
+};
 
-function computerChose() {
+const computerChose = () => {
   const choices = ['rock', 'paper', 'scissors'];
   const randomChoice = Math.floor(Math.random() * 3);
 
   return choices[randomChoice];
-}
+};
 
-function chooseWinner(playerChoice, computerChoice) {
+const chooseWinner = (playerChoice, computerChoice) => {
   const [rock, paper, scissors] = ['rock', 'paper', 'scissors'];
   const [computer, player, tie] = ['computer', 'player', 'tie'];
   let winner;
@@ -75,9 +72,9 @@ function chooseWinner(playerChoice, computerChoice) {
   }
 
   return winner;
-}
+};
 
-function updateScores(winner) {
+const updateScores = (winner) => {
   switch (winner) {
     default:
       break;
@@ -94,7 +91,10 @@ function updateScores(winner) {
       updateComputerScore(game.computerScore);
       break;
   }
-}
+};
+
+//! app
+resetGame();
 
 //! events
 play.addEventListener('click', playGame);
