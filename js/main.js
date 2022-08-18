@@ -24,8 +24,6 @@ const quit = document.querySelector('#quit');
 //! logic
 const resetGame = () => {
   resetGameDisplay();
-  showFists();
-  resetWinnerStatus();
   game.resetScores();
 };
 

@@ -28,6 +28,8 @@ export const resetGameDisplay = () => {
   quitMenu.classList.remove('show-quit-menu');
   scoreboard.classList.remove('show-scoreboard');
 
+  showFists();
+  resetWinnerStatus();
   playerScore.textContent = 0;
   computerScore.textContent = 0;
 };
