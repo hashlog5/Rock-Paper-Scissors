@@ -7,7 +7,7 @@ const CHOICE_COLOR = 'var(--choice-color)';
 const PLAY_COLOR = 'var(--play-color)';
 const QUIT_COLOR = 'var(--quit-color)';
 
-//! DOM
+//! UI: game displays and status
 const startMenu = document.querySelector('.start-menu');
 const choicesMenu = document.querySelector('.choices-menu');
 const quitMenu = document.querySelector('.quit-menu');

@@ -16,22 +16,10 @@ import {
   removeChoiceColor,
 } from './utilities.js';
 
-//! DOM
+//! UI: buttons
 const play = document.querySelector('#play');
 const choices = document.querySelectorAll('.choices i');
 const quit = document.querySelector('#quit');
-
-//! events
-play.addEventListener('click', playGame);
-
-choices.forEach((choice) =>
-  choice.addEventListener('click', () => {
-    setChoiceColor(choice);
-    playerChose(choice, choice.id);
-  })
-);
-
-quit.addEventListener('click', resetGame);
 
 //! app
 resetGame();
@@ -107,3 +95,15 @@ function updateScores(winner) {
       break;
   }
 }
+
+//! events
+play.addEventListener('click', playGame);
+
+choices.forEach((choice) =>
+  choice.addEventListener('click', () => {
+    setChoiceColor(choice);
+    playerChose(choice, choice.id);
+  })
+);
+
+quit.addEventListener('click', resetGame);
