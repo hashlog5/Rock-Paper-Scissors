@@ -33,7 +33,7 @@ play.addEventListener('click', playGame);
 
 choices.forEach((choice) =>
   choice.addEventListener('click', () => {
-    choice.style.color = CHOICE_COLOR;
+    setChoiceColor(choice);
     playerChose(choice, choice.id);
   })
 );
@@ -127,6 +127,14 @@ function setComputerAsWinner() {
   player.style.fontWeight = 'normal';
 }
 
+function setChoiceColor(choice) {
+  choice.style.color = CHOICE_COLOR;
+}
+
+function removeChoiceColor(choice) {
+  choice.style.color = '';
+}
+
 //! logic
 function playerChose(choice, playerChoice) {
   const computerChoice = computerChose();
@@ -143,7 +151,7 @@ function playerChose(choice, playerChoice) {
   }, 1750);
 
   setTimeout(() => {
-    choice.style.color = '';
+    removeChoiceColor(choice);
     enableButtons();
   }, 2000);
 }
