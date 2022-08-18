@@ -1,9 +1,10 @@
 import { game } from './game.js';
 
-//! html & css variables
+//! assets variables
 const ROCK_IMG = 'assets/rock.png';
+
+//! css variables
 const LIGHT_COLOR = 'var(--light-color)';
-const HAND_COLOR = 'var(--hand-color)';
 const CHOICE_COLOR = 'var(--choice-color)';
 const PLAY_COLOR = 'var(--play-color)';
 const QUIT_COLOR = 'var(--quit-color)';
