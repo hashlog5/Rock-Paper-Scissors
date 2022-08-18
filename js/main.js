@@ -16,7 +16,7 @@ import {
   removeChoiceColor,
 } from './utilities.js';
 
-//! UI: buttons
+//! UI: game buttons
 const play = document.querySelector('#play');
 const choices = document.querySelectorAll('.choices i');
 const quit = document.querySelector('#quit');
@@ -73,17 +73,19 @@ const chooseWinner = (playerChoice, computerChoice) => {
 };
 
 const updateScores = (winner) => {
+  const [playerWins, computerWins] = game.winnerSelection;
+
   switch (winner) {
     default:
       break;
 
-    case 'player':
+    case playerWins:
       game.playerEarnPoints();
       setPlayerAsWinner();
       updatePlayerScore(game.playerScore);
       break;
 
-    case 'computer':
+    case computerWins:
       game.computerEarnPoints();
       setComputerAsWinner();
       updateComputerScore(game.computerScore);
