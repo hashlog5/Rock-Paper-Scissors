@@ -77,18 +77,19 @@
 
 #quit {
   width: max(300px, 45%);
+  margin-bottom: 1rem;
   padding: 0.5rem 0;
 
   border: none;
   border-radius: 10px;
   background: var(--dark-color);
-  color: var(--light-color);
+  color: var(--quit-color);
   font-size: 2rem;
   font-weight: bold;
 }
 
 #quit:hover {
-  color: var(--quit-color);
+  color: var(--choice-color);
 }
 
 /** font-sizes */
