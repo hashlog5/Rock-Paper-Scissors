@@ -2,6 +2,9 @@ export const game = {
   playerPoints: 0,
   computerPoints: 0,
 
+  choices: ['rock', 'paper', 'scissors'],
+  winner: ['player', 'computer', 'tie'],
+
   get playerScore() {
     return this.playerPoints;
   },

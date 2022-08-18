@@ -50,15 +50,15 @@ const playerChose = (choice, playerChoice) => {
 };
 
 const computerChose = () => {
-  const choices = ['rock', 'paper', 'scissors'];
+  const computerChoose = game.choices;
   const randomChoice = Math.floor(Math.random() * 3);
 
-  return choices[randomChoice];
+  return computerChoose[randomChoice];
 };
 
 const chooseWinner = (playerChoice, computerChoice) => {
-  const [rock, paper, scissors] = ['rock', 'paper', 'scissors'];
-  const [computer, player, tie] = ['computer', 'player', 'tie'];
+  const [rock, paper, scissors] = game.choices;
+  const [player, computer, tie] = game.winner;
   let winner;
 
   if (playerChoice === computerChoice) {
