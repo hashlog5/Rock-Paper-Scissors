@@ -1,13 +1,13 @@
-//! assets variables
+//! assets
 const ROCK_IMG = 'assets/rock.png';
 
-//! css variables
+//! css
 const LIGHT_COLOR = 'var(--light-color)';
 const CHOICE_COLOR = 'var(--choice-color)';
 const PLAY_COLOR = 'var(--play-color)';
 const QUIT_COLOR = 'var(--quit-color)';
 
-//! UI: game displays and status
+//! UI: game displays
 const startMenu = document.querySelector('.start-menu');
 const choicesMenu = document.querySelector('.choices-menu');
 const quitMenu = document.querySelector('.quit-menu');
@@ -25,12 +25,11 @@ const computerScore = document.querySelector('.computer-score');
 export const resetGameDisplay = () => {
   startMenu.style.display = 'flex';
   choicesMenu.style.display = 'none';
-
+  quitMenu.classList.remove('show-quit-menu');
   scoreboard.classList.remove('show-scoreboard');
+
   playerScore.textContent = 0;
   computerScore.textContent = 0;
-
-  quitMenu.classList.remove('show-quit-menu');
 };
 
 export const showFists = () => {
@@ -51,8 +50,8 @@ export const playGame = () => {
 
   startMenu.style.display = 'none';
   choicesMenu.style.display = 'flex';
-  scoreboard.classList.add('show-scoreboard');
   quitMenu.classList.add('show-quit-menu');
+  scoreboard.classList.add('show-scoreboard');
 
   setTimeout(enableButtons, 500);
 };
@@ -67,7 +66,7 @@ export const enableButtons = () => {
   quitMenu.style.pointerEvents = 'all';
 };
 
-export const animateHands = () => {
+export const shakeHands = () => {
   playerHand.style.animation = 'shakePlayerHand 1.75s ease';
   computerHand.style.animation = 'shakeComputerHand 1.75s ease';
 

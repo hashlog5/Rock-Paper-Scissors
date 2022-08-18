@@ -6,7 +6,7 @@ import {
   playGame,
   disableButtons,
   enableButtons,
-  animateHands,
+  shakeHands,
   showChoices,
   setPlayerAsWinner,
   setComputerAsWinner,
@@ -36,7 +36,7 @@ const playerChose = (choice, playerChoice) => {
   showFists();
   resetWinnerStatus();
   disableButtons();
-  setTimeout(animateHands, 250);
+  setTimeout(shakeHands, 250);
 
   setTimeout(() => {
     showChoices(playerChoice, computerChoice);

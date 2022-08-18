@@ -15,7 +15,7 @@
   }
 }
 
-/** animate hands */
+/** shake hands */
 @keyframes shakePlayerHand {
   0% {
     transform: rotateY(180deg) translateY(0px);
